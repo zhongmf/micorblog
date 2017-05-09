@@ -1,0 +1,1640 @@
+extends layout
+
+block content
+ .navbar.navbar-inverse.navbar-fixed-top.navbar-layoutit
+  .navbar-header
+    button.navbar-toggle(data-target="navbar-collapse", data-toggle="collapse", type="button")
+      span.glyphicon-bar 				
+      span.glyphicon-bar 				
+      span.glyphicon-bar 			
+    a.navbar-brand(href="/")
+      img(src="")
+      | 自动生成模板工具
+  | 		
+  .collapse.navbar-collapse
+    ul#menu-layoutit.nav
+      li
+        .btn-group(data-toggle="buttons-radio")
+          button#edit.active.btn.btn-xs.btn-success(type="button")
+            | 编辑
+          | 						
+          button#devpreview.btn.btn-xs.btn-success(type="button")
+            | 开发
+          | 						
+          button#sourcepreview.btn.btn-xs.btn-success(type="button")
+            | 预览
+        | 					
+        .btn-group
+          button#button-download-Html.btn.btn-xs.btn-success(type="button", data-target="#downloadHtml", role="button", data-toggle="modal")
+            | 生成新页面
+          | 
+          button#button-download-modal.btn.btn-xs.btn-success(type="button", data-target="#downloadModal", role="button", data-toggle="modal")
+            | 生成新模板
+          | 
+          input#files(type="file", style="display:none",onchange="importModel();")
+          input#import.btn.btn-xs.btn-success(type="button",value="导入模板") 
+          | 					
+          button#clear.btn.btn-xs.btn-success(href="#clear")
+            | 清空
+ .container
+  .row
+    div
+      .sidebar-nav
+        ul.nav.nav-list.accordion-group
+          li.nav-header
+            .pull-right.popover-info
+              i.glyphicon.glyphicon-question-sign
+              | 							
+              .popover.fade.right
+                .arrow
+                | 								
+                h3.popover-title 帮助
+                | 								
+                .popover-content
+                  | 在这里设置你的栅格布局, 栅格总数默认为12, 用空格分割每列的栅格值, 如果您需要了解更多信息，请访问
+                  a(target="_brank", href="https://www.runoob.com/bootstrap/bootstrap-grid-system.html") BOOTSTRAP栅格系统.
+            | 						
+            i.glyphicon-plus.glyphicon
+            | 布局设置
+          | 					
+          li#estRows.rows
+            .lyrow
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview
+                input.form-control(type="text", value="12")
+              | 							
+              .view
+                .row.clearfix
+                  .col-md-12.column
+            | 						
+            .lyrow
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview
+                input.form-control(type="text", value="6 6")
+              | 							
+              .view
+                .row.clearfix
+                  .col-md-6.column
+                  | 									
+                  .col-md-6.column
+            | 						
+            .lyrow
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview
+                input.form-control(type="text", value="8 4")
+              | 							
+              .view
+                .row.clearfix
+                  .col-md-8.column
+                  | 									
+                  .col-md-4.column
+            | 						
+            .lyrow
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview
+                input.form-control(type="text", value="4 4 4")
+              | 							
+              .view
+                .row.clearfix
+                  .col-md-4.column									
+                  .col-md-4.column								
+                  .col-md-4.column
+            | 						
+            .lyrow
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview
+                input.form-control(type="text", value="2 6 4")
+              | 							
+              .view
+                .row.clearfix
+                  .col-md-2.column								
+                  .col-md-6.column								
+                  .col-md-4.column
+            | 						
+            .lyrow
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview
+                input.form-control(type="text", value="2 10")
+              | 							
+              .view
+                .row.clearfix
+                  .col-md-2.column								
+                  .col-md-10.column
+        | 				
+        ul.nav.nav-list.accordion-group
+          li.nav-header
+            i.glyphicon.glyphicon-plus
+            | 基本CSS
+            | 						
+            .pull-right.popover-info
+              i.glyphicon.glyphicon-question-sign
+              | 							
+              .popover.fade.right
+                .arrow
+                | 								
+                h3.popover-title 帮助
+                | 								
+                .popover-content
+                  | 将组件元素拖放入你需要放入的栅格列中。之后，你可以设置该元素的样式。如果你需要了解更多内容，请访问
+                  a(target="_blank", href="https://www.runoob.com/bootstrap/bootstrap-css-overview.html") 基本CSS.
+          | 					
+          li#elmBase.boxes
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 主题等级
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", hgrade="") 默认
+                    | 										
+                    li
+                      a(href="#", hgrade="1") 一级
+                    | 										
+                    li
+                      a(href="#", hgrade="2") 二级
+                    | 										
+                    li
+                      a(href="#", hgrade="3") 三级
+                    | 										
+                    li
+                      a(href="#", hgrade="4") 四级
+                    | 										
+                    li
+                      a(href="#", hgrade="5") 五级
+                    | 										
+                    li
+                      a(href="#", hgrade="6") 六级
+                | 
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 对齐
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="text-left") 靠左
+                    | 										
+                    li
+                      a(href="#", rel="text-center") 居中
+                    | 										
+                    li
+                      a(href="#", rel="text-right") 靠右
+                | 								
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 标记
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="muted") 禁用
+                    | 										
+                    li
+                      a(href="#", rel="text-warning") 警告
+                    | 										
+                    li
+                      a(href="#", rel="text-error") 错误
+                    | 										
+                    li
+                      a(href="#", rel="text-info") 提示
+                    | 										
+                    li
+                      a(href="#", rel="text-success") 成功
+              | 							
+              .preview 标题栏
+              | 							
+              .view
+                h3(contenteditable="true") 这是一套可视化布局系统.
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 对齐
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="text-left") 靠左
+                    | 										
+                    li
+                      a(href="#", rel="text-center") 居中
+                    | 										
+                    li
+                      a(href="#", rel="text-right") 靠右
+                | 								
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 标记
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="muted") 禁用
+                    | 										
+                    li
+                      a(href="#", rel="text-warning") 警告
+                    | 										
+                    li
+                      a(href="#", rel="text-error") 错误
+                    | 										
+                    li
+                      a(href="#", rel="text-info") 提示
+                    | 										
+                    li
+                      a(href="#", rel="text-success") 成功
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="lead") Lead
+              | 							
+              .preview 段落
+              | 							
+              .view
+                p.addCss(contenteditable="true")
+                  em Git
+                  | 是一个分布式的版本控制系统，最初由 
+                  strong Linus Torvalds
+                  | 编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在
+                  | 									
+                  small Ruby
+                  | 社区中。
+            | 	      		
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              |               
+              span.drag.label.label-default
+                | 拖动
+              | 
+              .preview 代码块
+              | 
+              .view
+               pre(contenteditable="true")
+                code
+                 |public void static main(){
+                 | system.out.print("holle");
+                 | }
+            | 
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview 地址
+              | 							
+              .view
+                address(contenteditable="true")
+                  strong Twitter, Inc.
+                  | 									
+                  br
+                  | 795 Folsom Ave, Suite 600
+                  | 									
+                  br
+                  | San Francisco, CA 94107
+                  | 									
+                  br
+                  |  
+                  abbr(title="Phone") P:
+                  | (123) 456-7890
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="pull-right") Pull right
+              | 							
+              .preview 引用块
+              | 							
+              .view.clearfix
+                blockquote(contenteditable="true")
+                  p.addCss
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                  | 									
+                  small
+                    | Someone famous
+                    cite(title="Source Title") Source Title
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="list-unstyled") 无样式
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="list-inline") 嵌入
+              | 							
+              .preview 无序列表
+              | 							
+              .view
+                ul(contenteditable="true")
+                  li Lorem ipsum dolor sit amet
+                  | 									
+                  li Consectetur adipiscing elit
+                  | 									
+                  li Integer molestie lorem at massa
+                  | 									
+                  li Facilisis in pretium nisl aliquet
+                  | 									
+                  li Nulla volutpat aliquam velit
+                  | 									
+                  li Faucibus porta lacus fringilla vel
+                  | 									
+                  li Aenean sit amet erat nunc
+                  | 									
+                  li Eget porttitor lorem
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="list-unstyled") 无样式
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="list-inline") 嵌入
+              | 							
+              .preview 有序列表
+              | 							
+              .view
+                ol(contenteditable="true")
+                  li Lorem ipsum dolor sit amet
+                  | 									
+                  li Consectetur adipiscing elit
+                  | 									
+                  li Integer molestie lorem at massa
+                  | 									
+                  li Facilisis in pretium nisl aliquet
+                  | 									
+                  li Nulla volutpat aliquam velit
+                  | 									
+                  li Faucibus porta lacus fringilla vel
+                  | 									
+                  li Aenean sit amet erat nunc
+                  | 									
+                  li Eget porttitor lorem
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="dl-horizontal") 竖向对齐
+              | 							
+              .preview 详细描述
+              | 							
+              .view
+                dl(contenteditable="true")
+                  dt Description lists
+                  | 									
+                  dd A description list is perfect for defining terms.
+                  | 									
+                  dt Euismod
+                  | 									
+                  dd
+                    | Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+                  | 									
+                  dd Donec id elit non mi porta gravida at eget metus.
+                  | 									
+                  dt Malesuada porta
+                  | 									
+                  dd Etiam porta sem malesuada magna mollis euismod.
+                  | 									
+                  dt Felis euismod semper eget lacinia
+                  | 									
+                  dd
+                    | Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="table-striped") 条纹
+                    | 										
+                    li
+                      a(href="#", rel="table-bordered") 边框
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="table-hover") 鼠标指示
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="table-condensed") 紧凑
+              | 							
+              .preview 表格
+              | 							
+              .view
+                table.table(contenteditable="true")
+                  thead
+                    tr
+                      th 编号
+                      | 											
+                      th 产品
+                      | 											
+                      th 交付时间
+                      | 											
+                      th 状态
+                  | 									
+                  tbody
+                    tr
+                      td 1
+                      | 											
+                      td TB - Monthly
+                      | 											
+                      td 01/04/2012
+                      | 											
+                      td Default
+                    | 										
+                    tr.success
+                      td 1
+                      | 											
+                      td TB - Monthly
+                      | 											
+                      td 01/04/2012
+                      | 											
+                      td Approved
+                    | 										
+                    tr.error
+                      td 2
+                      | 											
+                      td TB - Monthly
+                      | 											
+                      td 02/04/2012
+                      | 											
+                      td Declined
+                    | 										
+                    tr.warning
+                      td 3
+                      | 											
+                      td TB - Monthly
+                      | 											
+                      td 03/04/2012
+                      | 											
+                      td Pending
+                    | 										
+                    tr.info
+                      td 4
+                      | 											
+                      td TB - Monthly
+                      | 											
+                      td 04/04/2012
+                      | 											
+                      td Call in to confirm
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="form-inline") 嵌入
+              | 							
+              .preview 提交表单
+              | 							
+              .view
+                form(role="form")
+                  .form-group
+                    label(for="exampleInputEmail1") Email address
+                    | 										
+                    input#exampleInputEmail1.form-control(type="email", placeholder="Enter email")
+                  | 									
+                  .form-group
+                    label(for="exampleInputPassword1") Password
+                    | 										
+                    input#exampleInputPassword1.form-control(type="password", placeholder="Password")
+                  | 									
+                  .form-group
+                    label(for="exampleInputFile") File input
+                    | 										
+                    input#exampleInputFile(type="file")
+                    | 										
+                    p.help-block Example block-level help text here.
+                  | 									
+                  .checkbox
+                    label
+                      input(type="checkbox")
+                      | Check me out
+                  | 									
+                  button.btn.btn-default(type="submit") Submit
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+              | 							
+              .preview 纵向表单
+              | 							
+              .view
+                form.form-horizontal(role="form")
+                  .form-group
+                    label.col-sm-2.control-label(for="inputEmail3") Email
+                    | 										
+                    .col-sm-10
+                      input#inputEmail3.form-control(type="email", placeholder="Email")
+                  | 									
+                  .form-group
+                    label.col-sm-2.control-label(for="inputPassword3") Password
+                    | 										
+                    .col-sm-10
+                      input#inputPassword3.form-control(type="password", placeholder="Password")
+                  | 									
+                  .form-group
+                    .col-sm-offset-2.col-sm-10
+                      .checkbox
+                        label
+                          input(type="checkbox")
+                          | Remember me
+                  | 									
+                  .form-group
+                    .col-sm-offset-2.col-sm-10
+                      button.btn.btn-default(type="submit") Sign in
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="btn-primary") 原生
+                    | 										
+                    li
+                      a(href="#", rel="btn-info") 信息
+                    | 										
+                    li
+                      a(href="#", rel="btn-success") 成功
+                    | 										
+                    li
+                      a(href="#", rel="btn-warning") 提醒
+                    | 										
+                    li
+                      a(href="#", rel="btn-danger") 危险
+                    | 										
+                    li
+                      a(href="#", rel="btn-inverse") 反转
+                    | 										
+                    li
+                      a(href="#", rel="btn-link") 链接
+                | 								
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 尺寸
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li
+                      a(href="#", rel="btn-lg") 大
+                    | 										
+                    li
+                      a(href="#", rel="btn-default") 默认
+                    | 										
+                    li
+                      a(href="#", rel="btn-sm") 小
+                    | 										
+                    li
+                      a(href="#", rel="btn-xs") 微型
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="btn-block") 通栏
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="active") 活动
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="disabled") 禁用
+              | 							
+              .preview 按钮
+              | 							
+              .view
+                button.btn.btn-default(type="button", contenteditable="true") 按钮
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="img-rounded") 圆角
+                    | 										
+                    li
+                      a(href="#", rel="img-circle") 圆圈
+                    | 										
+                    li
+                      a(href="#", rel="img-thumbnail") 相框
+                | 								
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 位置
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", position="") 默认
+                    | 										
+                    li
+                      a(href="#", position="left") 居左
+                    | 										
+                    li
+                      a(href="#", position="right") 居右
+                    | 										
+                    li
+                      a(href="#", position="center") 居中
+              | 							
+              .preview 图片
+              | 							
+              .view
+                img.addSrc(alt="140x140", src="/images/default3.jpg")
+        | 				
+        ul.nav.nav-list.accordion-group
+          li.nav-header
+            i.glyphicon.glyphicon-plus
+            | 						工具组件
+            | 						
+            .pull-right.popover-info
+              i.glyphicon.glyphicon-question-sign
+              | 							
+              .popover.fade.right
+                .arrow
+                | 								
+                h3.popover-title 帮助
+                | 								
+                .popover-content
+                  | 将组件元素拖放入你需要放入的栅格列中。之后，你可以设置该组件的样式。如果你需要了解更多内容，请访问
+                  a(target="_blank", href="https://www.runoob.com/bootstrap/bootstrap-glyphicons.html") 工具组件.
+          | 					
+          li#elmComponents.boxes
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 尺寸
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="btn-group-lg") 大
+                    | 										
+                    li
+                      a(href="#", rel="btn-group-md") 中
+                    | 										
+                    li
+                      a(href="#", rel="btn-group-sm") 小
+                    | 										
+                    li
+                      a(href="#", rel="btn-group-xs") 微型
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="btn-group-vertical") 竖向
+              | 							
+              .preview 按钮组
+              | 							
+              .view
+                .btn-group
+                  button.btn.btn-default(type="button", contenteditable="true")
+                    | 左
+                  | 									
+                  button.btn.btn-default(type="button", contenteditable="true")
+                    | 中
+                  | 									
+                  button.btn.btn-default(type="button", contenteditable="true")
+                    | 右
+                  | 									
+                  button.btn.btn-default(type="button", contenteditable="true")
+                    | 全
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="dropup") 朝向
+              | 							
+              .preview 下拉菜单
+              | 							
+              .view
+                .btn-group
+                  button.btn.btn-default(contenteditable="true") Action
+                  | 									
+                  button.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
+                    span.caret
+                  | 									
+                  ul.dropdown-menu(contenteditable="true")
+                    li
+                      a(href="#") 操作
+                    | 										
+                    li.disabled
+                      a(href="#") 另一操作
+                    | 										
+                    li.divider
+                    | 										
+                    li
+                      a(href="#") 其它
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li
+                      a(href="#", rel="nav-tabs") 默认
+                    | 										
+                    li
+                      a(href="#", rel="nav-pills") 线框
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="nav-stacked") 切换格式
+              | 							
+              .preview 导航
+              | 							
+              .view
+                ul.nav.nav-tabs(contenteditable="true")
+                  li.active
+                    a(href="#", contenteditable="true") 首页
+                  | 									
+                  li
+                    a(href="#", contenteditable="true") 简介
+                  | 									
+                  li.disabled
+                    a(href="#", contenteditable="true") 信息
+                  | 									
+                  li.dropdown.pull-right
+                    a.dropdown-toggle(href="#", data-toggle="dropdown")
+                      | 下拉 
+                      b.caret
+                    | 										
+                    ul.dropdown-menu
+                      li
+                        a(href="#") 操作
+                      | 											
+                      li
+                        a(href="#") 设置栏目
+                      | 											
+                      li
+                        a(href="#") 更多设置
+                      | 											
+                      li.divider
+                      | 											
+                      li
+                        a(href="#") 分割线
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview 路径导航
+              | 							
+              .view
+                ul.breadcrumb
+                  li
+                    a(href="#", contenteditable="true") Home
+                  | 									
+                  li
+                    a(href="#", contenteditable="true") Library
+                  | 									
+                  li.active(contenteditable="true") Data
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 尺寸
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li
+                      a(href="#", rel="pagination-lg") 大
+                    | 										
+                    li.active
+                      a(href="#", rel="") 众
+                    | 										
+                    li
+                      a(href="#", rel="pagination-sm") 小
+              | 							
+              .preview 分页
+              | 							
+              .view
+                ul.pagination(contenteditable="true")
+                  li
+                    a(href="#") Prev
+                  | 									
+                  li
+                    a(href="#") 1
+                  | 									
+                  li
+                    a(href="#") 2
+                  | 									
+                  li
+                    a(href="#") 3
+                  | 									
+                  li
+                    a(href="#") 4
+                  | 									
+                  li
+                    a(href="#") 5
+                  | 									
+                  li
+                    a(href="#") Next
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li
+                      a(href="#", rel="label-default") Default
+                    | 										
+                    li
+                      a(href="#", rel="label-primary") Primary
+                    | 										
+                    li
+                      a(href="#", rel="label-success") Success
+                    | 										
+                    li
+                      a(href="#", rel="label-info") Info
+                    | 										
+                    li
+                      a(href="#", rel="label-warning") Warning
+                    | 										
+                    li
+                      a(href="#", rel="label-danger") Danger
+              | 							
+              .preview 标签
+              | 							
+              .view
+                span.label.label-default(contenteditable="true") 标签
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+              | 							
+              .preview 徽章
+              | 							
+              .view
+                ul.nav.nav-pills(contenteditable="true")
+                  li.active
+                    a(href="#")
+                      span.badge.pull-right 42
+                      | Home
+                  | 									
+                  li
+                    a(href="#")
+                      span.badge.pull-right 16
+                      | More
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="well") Well
+              | 							
+              .preview 巨幕
+              | 							
+              .view
+                .jumbotron(contenteditable="true")
+                  h1.addCss Hello, world!
+                  | 									
+                  p.addCss
+                    | This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                  | 									
+                  p.addCss
+                    a.btn.btn-primary.btn-large(href="#") Learn more
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview 页头
+              | 							
+              .view
+                .page-header
+                  h1(contenteditable="true")
+                    | Example page header
+                    small Subtext for header
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview 文本
+              | 							
+              .view
+                h2.addCss(contenteditable="true") Heading
+                | 								
+                p.addCss(contenteditable="true")
+                  | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                | 								
+                p.addCss
+                  a.btn(href="#", contenteditable="true") View details »
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview 缩略图
+              | 							
+              .view
+                .row
+                  .col-md-4
+                    .thumbnail
+                      img(alt="300x200", src="/images/default4.jpg")
+                      | 											
+                      .caption(contenteditable="true")
+                        h3.addCss Thumbnail label
+                        | 												
+                        p.addCss
+                          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        | 												
+                        p.addCss
+                          a.btn.btn-primary(href="#") Action
+                          | 													
+                          a.btn(href="#") Action
+                  | 									
+                  .col-md-4
+                    .thumbnail
+                      img(alt="300x200", src="/images/default5.jpg")
+                      | 											
+                      .caption(contenteditable="true")
+                        h3 Thumbnail label
+                        | 												
+                        p.addCss
+                          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        | 												
+                        p.addCss
+                          a.btn.btn-primary(href="#") Action
+                          | 													
+                          a.btn(href="#") Action
+                  | 									
+                  .col-md-4
+                    .thumbnail
+                      img(alt="300x200", src="/images/default6.jpg")
+                      | 											
+                      .caption(contenteditable="true")
+                        h3 Thumbnail label
+                        | 												
+                        p.addCss
+                          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        | 												
+                        p.addCss
+                          a.btn.btn-primary(href="#") Action
+                          | 													
+                          a.btn(href="#") Action
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="progress-striped") 条纹
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="active") 动画
+              | 							
+              .preview 进度条
+              | 							
+              .view
+                .progress
+                  .progress-bar.progress-success(style="width: 60%;")
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                a.btn.btn-xs.btn-default(href="#", rel="well") 嵌入
+              | 							
+              .preview 媒体
+              | 							
+              .view
+                .media
+                  a.pull-left(href="#")
+                    img.media-object(src="/images/default7.jpg")
+                  | 									
+                  .media-body(contenteditable="true")
+                    h4.media-heading Nested media heading
+                    | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    | 										
+                    .media
+                      a.pull-left(href="#")
+                        img.media-object(src="/images/default8.jpg")
+                      | 											
+                      .media-body(contenteditable="true")
+                        h4.media-heading Nested media heading
+                        | Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+              | 							
+              .preview 列表组
+              | 							
+              .view
+                .list-group(contenteditable="true")
+                  a.list-group-item.active(href="#") Home
+                  | 									
+                  .list-group-item List header
+                  | 									
+                  .list-group-item
+                    h4.list-group-item-heading.addCss List group item heading
+                    | 										
+                    p.list-group-item-text.addCss ...
+                  | 									
+                  .list-group-item
+                    span.badge 14
+                    | Help
+                  | 									
+                  a.list-group-item.active
+                    span.badge 14
+                    | Help
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li
+                      a(href="#", rel="panel-default") Default
+                    | 										
+                    li
+                      a(href="#", rel="panel-primary") Primary
+                    | 										
+                    li
+                      a(href="#", rel="panel-success") Success
+                    | 										
+                    li
+                      a(href="#", rel="panel-info") Info
+                    | 										
+                    li
+                      a(href="#", rel="panel-warning") Warning
+                    | 										
+                    li
+                      a(href="#", rel="panel-danger") Danger
+              | 							
+              .preview 面板
+              | 							
+              .view
+                .panel.panel-default
+                  .panel-heading
+                    h3.panel-title(contenteditable="true") Panel title
+                  | 									
+                  .panel-body(contenteditable="true") Panel content
+                  | 									
+                  .panel-footer(contenteditable="true") Panel footer
+        | 				
+        ul.nav.nav-list.accordion-group
+          li.nav-header
+            i.glyphicon.glyphicon-plus
+            | 						JavaScript
+            | 						
+            .pull-right.popover-info
+              i.glyphicon.glyphicon-question-sign
+              | 							
+              .popover.fade.right
+                .arrow
+                | 								
+                h3.popover-title 帮助
+                | 								
+                .popover-content
+                  | 将组件元素拖放入你需要放入的栅格列中。之后，你可以设置该javascript组件的样式。如果你需要了解更多内容，请访问
+                  a(target="_blank", href="https://www.runoob.com/bootstrap/bootstrap-plugins-overview.html") JavaScript
+          | 					
+          li#elmJS.boxes.mute
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              .preview 遮罩窗体
+              | 							
+              .view
+                // Button to trigger modal
+                a#myModalLink.btn(href="#myModalContainer", role="button", data-toggle="modal") 触发遮罩窗体
+                // Modal
+                #myModalContainer.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        button.close(type="button", data-dismiss="modal", aria-hidden="true") ×
+                        | 												
+                        h4#myModalLabel.modal-title(contenteditable="true") 标题
+                      | 											
+                      .modal-body(contenteditable="true") 内容...
+                      | 											
+                      .modal-footer
+                        button.btn.btn-default(type="button", data-dismiss="modal", contenteditable="true") 关闭
+                        | 												
+                        button.btn.btn-primary(type="button", contenteditable="true") 保存
+                    // /.modal-content
+                  // /.modal-dialog
+                // /.modal
+            | 						
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 							
+              span.drag.label.label-default
+                | 拖动
+              | 							
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 位置
+                    span.caret
+                  | 									
+                  ul.dropdown-menu
+                    li.active
+                      a(href="#", rel="") 默认
+                    | 										
+                    li
+                      a(href="#", rel="navbar-static-top") 头部
+                    | 										
+                    li
+                      a(href="#", rel="navbar-fixed-top") 固定在头部
+                    | 										
+                    li
+                      a(href="#", rel="navbar-fixed-bottom") 固定在底部
+                | 								
+                a.btn.btn-xs.btn-default(href="#", rel="navbar-inverse") 反转
+                //
+                  a class="btn btn-xs btn-default" href="#" rel="navbar-static-top">Static top</a>
+                  <a class="btn btn-mini" href="#" rel="navbar-fixed-top">Navbar fixed top</a>
+                  <a class="btn btn-mini" href="#" rel="navbar-fixed-bottom">Navbar fixed bottom</a
+              | 						
+              .preview 导航栏
+              | 						
+              .view
+                nav.navbar.navbar-default(role="navigation")
+                  // Brand and toggle get grouped for better mobile display
+                  .navbar-header
+                    button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+                      span.sr-only Toggle navigation 										
+                      span.icon-bar 										
+                      span.icon-bar 										
+                      span.icon-bar
+                    | 									
+                    a.navbar-brand(href="#") Brand
+                  // Collect the nav links, forms, and other content for toggling
+                  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                      li.active
+                        a(href="#") Link
+                      | 										
+                      li
+                        a(href="#") Link
+                      | 										
+                      li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown")
+                          | Dropdown 
+                          b.caret
+                        | 											
+                        ul.dropdown-menu
+                          li
+                            a(href="#") Action
+                          | 												
+                          li
+                            a(href="#") Another action
+                          | 												
+                          li
+                            a(href="#") Something else here
+                          | 												
+                          li.divider
+                          | 												
+                          li
+                            a(href="#") Separated link
+                          | 												
+                          li.divider
+                          | 												
+                          li
+                            a(href="#") One more separated link
+                    | 									
+                    form.navbar-form.navbar-left(role="search")
+                      .form-group
+                        input.form-control(type="text", placeholder="Search")
+                      | 										
+                      button.btn.btn-default(type="submit") Submit
+                    | 									
+                    ul.nav.navbar-nav.navbar-right
+                      li
+                        a(href="#") Link
+                      | 										
+                      li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown")
+                          | Dropdown
+                          b.caret
+                        | 											
+                        ul.dropdown-menu
+                          li
+                            a(href="#") Action
+                          | 												
+                          li
+                            a(href="#") Another action
+                          | 												
+                          li
+                            a(href="#") Something else here
+                          | 												
+                          li.divider
+                          | 												
+                          li
+                            a(href="#") Separated link
+            | 					
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 						
+              span.drag.label.label-default
+                | 拖动
+              | 						
+              span.configuration
+              | 						
+              .preview 选项卡
+              | 						
+              .view
+                #myTabs.tabbable
+                  // Only required for left/right tabs
+                  ul.nav.nav-tabs
+                    li.active
+                      a(href="#tab1", data-toggle="tab", contenteditable="true") Section 1
+                    | 									
+                    li
+                      a(href="#tab2", data-toggle="tab", contenteditable="true") Section 2
+                  | 								
+                  .tab-content
+                    #tab1.tab-pane.active
+                      p.addCss(contenteditable="true") I'm in Section 1.
+                    | 									
+                    #tab2.tab-pane
+                      p.addCss(contenteditable="true") Howdy, I'm in Section 2.
+            | 					
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 						
+              span.drag.label.label-default
+                | 拖动
+              | 						
+              span.configuration
+                span.btn-group.btn-group-xs
+                  a.btn.btn-default.dropdown-toggle(data-toggle="dropdown", href="#")
+                    | 样式
+                    span.caret
+                  | 								
+                  ul.dropdown-menu
+                    li
+                      a(href="#", rel="alert-success") Success
+                    | 									
+                    li
+                      a(href="#", rel="alert-info") Info
+                    | 									
+                    li
+                      a(href="#", rel="alert-warning") Warning
+                    | 									
+                    li
+                      a(href="#", rel="alert-danger") Danger
+              | 						
+              .preview 提示框
+              | 						
+              .view
+                .alert.alert-success.alert-dismissable(contenteditable="true")
+                  button.close(type="button", data-dismiss="alert", aria-hidden="true") ×
+                  | 								
+                  h4 注意!
+                  | 								
+                  strong Warning!
+                  | Best check yo self, you're not looking too good.
+                  | 								
+                  a.alert-link(href="#") alert link
+            | 					
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 						
+              span.drag.label.label-default
+                | 拖动
+              | 						
+              .preview 手风琴切换
+              | 						
+              .view
+                #myAccordion.panel-group
+                  .panel.panel-default
+                    .panel-heading
+                      a.panel-title(data-toggle="collapse", data-parent="#myAccordion", href="#collapseOne", contenteditable="true") Collapsible Group Item #1
+                    | 									
+                    #collapseOne.panel-collapse.collapse.in
+                      .panel-body(contenteditable="true") Anim pariatur cliche...
+                  | 								
+                  .panel.panel-default
+                    .panel-heading
+                      a.panel-title(data-toggle="collapse", data-parent="#myAccordion", href="#collapseTwo", contenteditable="true") Collapsible Group Item #2
+                    | 									
+                    #collapseTwo.panel-collapse.collapse
+                      .panel-body(contenteditable="true") Anim pariatur cliche...
+            | 					
+            .box.box-element
+              a.remove.label.label-danger(href="#close")
+                | 删除
+              | 						
+              span.drag.label.label-default
+                | 拖动
+              | 						
+              .preview 幻灯片
+              | 						
+              .view
+                #myCarousel.carousel.slide
+                  ol.carousel-indicators
+                    li.active(data-slide-to="0", data-target="#myCarousel")
+                    | 									
+                    li(data-slide-to="1", data-target="#myCarousel")
+                    | 									
+                    li(data-slide-to="2", data-target="#myCarousel")
+                  | 								
+                  .carousel-inner
+                    .item.active
+                      img.addSrc(alt="", src="/images/default.jpg")
+                      | 										
+                      .carousel-caption
+                        h4 First Thumbnail label
+                        | 											
+                        p.addCss
+                          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    | 									
+                    .item
+                      img.addSrc(alt="", src="/images/default1.jpg")
+                      | 										
+                      .carousel-caption
+                        h4 Second Thumbnail label
+                        | 											
+                        p.addCss
+                          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    | 									
+                    .item
+                      img.addSrc(alt="", src="/images/default2.jpg")
+                      | 										
+                      .carousel-caption
+                        h4.addCss Third Thumbnail label
+                        | 											
+                        p.addCss
+                          | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                  | 								
+                  a.left.carousel-control(href="#myCarousel", data-slide="prev")
+                    span.glyphicon.glyphicon-chevron-left
+                  | 								
+                  a.right.carousel-control(href="#myCarousel", data-slide="next")
+                    span.glyphicon.glyphicon-chevron-right
+    // /span
+    .demo
+    // /span
+    #download-layout
+     .container
+  // /row
+
+  script(type="text/javascript").
+
+   $(document).on('hidden.bs.modal', function (e) {
+   $(e.target).removeData('bs.modal');
+   });
+
+  #downloadHtml.modal.fade(tabindex="-1", role="dialog", aria-labelledby="downloadHtmlLabel", aria-hidden="true")
+   .modal-dialog
+     .modal-content
+      form(action="newHtml",method="POST")
+       .modal-header
+        button.close(type="button", data-dismiss="modal", aria-hidden="true") ×
+        | 		
+        h4.modal-title 下载
+       | 	
+       .modal-body
+        #download-logged
+          .alert.alert-info
+            | 已在下面生成干净的HTML, 可以复制粘贴代码到你的body内
+          | 			
+          p
+          
+            textarea(name="htmlStr")
+        input(placeholder="关键字",type="text", name="keywords")
+        input(placeholder="概述",type="text",name="description")
+       | 	
+       .modal-footer
+        button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+        button.btn.btn-default#newHtml(type="submit") 确定
+  #downloadModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="downloadModalLabel", aria-hidden="true")
+   .modal-dialog
+     .modal-content
+      form(action="saveModelHtml",method="POST")
+       .modal-header
+        button.close(type="button", data-dismiss="modal", aria-hidden="true") ×
+        |     
+        h4.modal-title 下载
+       |  
+       .modal-body
+        #download-logged
+          .alert.alert-info
+            | 已在下面生成model
+          |       
+          p
+          
+            textarea(name="htmlStr")
+       |  
+       .modal-footer
+        button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+        button.btn.btn-default#newHtml(type="submit") 确定
+    // /.modal-content
+   // /.modal-dialog
+   script(type="text/javascript").
+    downloadLayoutSrc();
+    
+  #shareModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="shareModalLabel", aria-hidden="true")
+  #feedbackModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="feedbackModalLabel", aria-hidden="true")
+   .modal-dialog
+     .modal-content
+      .modal-header
+        button.close(type="button", data-dismiss="modal", aria-hidden="true") ×
+        | 		
+        h4.modal-title 联系我
+      | 	
+      .modal-body
+        #download-logged
+          .alert.alert-info
+            a(href="#") zhongmeifang
+    // /.modal-content
+  // /.modal-dialog
